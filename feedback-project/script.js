@@ -7,19 +7,25 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
     document.getElementById("status").innerText = "Submitting...";
 
     try {
-        const res = await fetch("https://your-api-name.onrender.com/feedback", {
+        const res = await fetch("https://feedback-project-1-jp73.onrender.com/feedback", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, message })
         });
 
+        const data = await res.json();
+
         if (res.ok) {
             document.getElementById("status").innerText = "Feedback submitted!";
+            alert("Feedback submitted successfully!");
             document.getElementById("feedbackForm").reset();
         } else {
             document.getElementById("status").innerText = "Error submitting!";
+            alert("Error submitting feedback");
         }
+
     } catch (err) {
         document.getElementById("status").innerText = "Network error!";
+        alert("Network error");
     }
 });
