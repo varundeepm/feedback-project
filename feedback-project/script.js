@@ -20,11 +20,11 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
             document.getElementById("status").innerText = "Feedback submitted!";
             document.getElementById("feedbackForm").reset();
         } else {
-            document.getElementById("status").innerText = "Error!";
+            document.getElementById("status").innerText = "Error submitting feedback!";
         }
 
     } catch (err) {
-        console.log("Network error:", err);
+        console.error("Network error:", err);
         document.getElementById("status").innerText = "Network error!";
     }
 });
