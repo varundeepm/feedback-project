@@ -1,10 +1,9 @@
 document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const name = document.getElementById("name").value.trim();
     const message = document.getElementById("message").value.trim();
-
-    document.getElementById("status").innerText = "Submitting...";
+    const status = document.getElementById("status");
+    status.innerText = "Submitting...";
 
     try {
         const res = await fetch("https://feedback-project-1-jp73.onrender.com/feedback", {
@@ -13,19 +12,16 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
             body: JSON.stringify({ name, message })
         });
 
-        const data = await res.json();
-
         if (res.ok) {
-            document.getElementById("status").innerText = "Feedback submitted!";
-            alert("Feedback submitted successfully!");
+            status.innerText = "Feedback submitted!";
             document.getElementById("feedbackForm").reset();
+            alert("Feedback submitted successfully!");
         } else {
-            document.getElementById("status").innerText = "Error submitting!";
-            alert("Error submitting feedback");
+            status.innerText = "Error submitting!";
+            alert("Error submitting feedback!");
         }
-
     } catch (err) {
-        document.getElementById("status").innerText = "Network error!";
-        alert("Network error");
+        status.innerText = "Network error!";
+        alert("Network error, try again!");
     }
 });
