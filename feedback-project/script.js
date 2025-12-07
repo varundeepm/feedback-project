@@ -14,7 +14,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
         });
 
         const data = await res.json();
-        console.log("Backend response:", data);  // ← Debug
+        console.log("Backend response:", data);
 
         if (res.ok) {
             document.getElementById("status").innerText = "Feedback submitted!";
@@ -24,7 +24,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
         }
 
     } catch (err) {
-        console.log("Network error:", err);   // ← Debug
+        console.log("Network error:", err);
         document.getElementById("status").innerText = "Network error!";
     }
 });
