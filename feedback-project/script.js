@@ -1,8 +1,8 @@
 document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const message = document.getElementById("feedback").value;
+    const name = document.getElementById("name").value.trim();
+    const message = document.getElementById("message").value.trim();
 
     document.getElementById("status").innerText = "Submitting...";
 
@@ -14,8 +14,9 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
         });
 
         const data = await res.json();
+        console.log("Backend response:", data);  // ← Debug
 
-        if (data.success) {
+        if (res.ok) {
             document.getElementById("status").innerText = "Feedback submitted!";
             document.getElementById("feedbackForm").reset();
         } else {
@@ -23,6 +24,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
         }
 
     } catch (err) {
+        console.log("Network error:", err);   // ← Debug
         document.getElementById("status").innerText = "Network error!";
     }
 });
