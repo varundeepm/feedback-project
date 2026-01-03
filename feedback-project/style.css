@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    background-image: url("bg.jpg"); /* your downloaded image */
+    background-image: url("bg.avif"); /* your downloaded image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,4 +95,5 @@ button:hover {
         transform: translateY(0);
     }
 }
+
 
