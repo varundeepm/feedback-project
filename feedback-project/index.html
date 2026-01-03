@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
+    <title>Feedback</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h2>Submit Your Feedback</h2>
+    <div class="card">
+        <h2>💬 Feedback</h2>
+        <p>Your opinion helps us improve</p>
 
         <form id="feedbackForm">
-            <label>Name</label>
-            <input type="text" id="name" required>
-        </br>
-            <label>Message</label>
-            <textarea id="message" required></textarea>
-
-            <button type="submit">Submit</button>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit"> Feedback Send Successfully 🚀</button>
         </form>
 
-        <p id="status"></p>
+        <span id="status"></span>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
