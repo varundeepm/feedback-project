@@ -7,11 +7,15 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2, #ff9a9e);
+    background-image: url("bg.jpg"); /* your downloaded image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .login-container {
     width: 100%;
@@ -91,3 +95,4 @@ button:hover {
         transform: translateY(0);
     }
 }
+
